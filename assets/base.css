@@ -24,14 +24,14 @@ h1 {
   font-weight: 400;
   font-size: 24px;
   line-height: 46px;
-  color: #330033;
+  color: #330000;
 }
 h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: -20px;
-  color: #330033;
+  color: #330000;
 }
 h3 {
   font-family: 'Roboto', sans-serif;
@@ -57,7 +57,7 @@ h4 {
 }
 a:link,a:active {
   font-weight: 400;
-  color: #330033;
+  color: #330000;
   text-decoration: none;
 } 
 .linkwhite {
@@ -67,7 +67,7 @@ a:link,a:active {
 }
 a:visited, a:hover {
   font-weight: 400;
-  color: #330033;
+  color: #330000;
   text-decoration: underline;
 }
 .img-circle {
@@ -95,7 +95,7 @@ a:visited, a:hover {
  }
  .content_contact {
   position: relative;
-  background: #330033 no-repeat center center fixed;
+  background: #330000 no-repeat center center fixed;
   background-size: cover;
  }
 .content_black {
@@ -118,12 +118,12 @@ a:visited, a:hover {
   color: #1F1F1F;
 }
 .some-related-articles h1 {
-  color: #330033;
+  color: #330000;
   margin-top: 60px;
   text-transform: uppercase;
 }
 .some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
-  color: #330033;
+  color: #330000;
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
@@ -211,7 +211,7 @@ a:visited, a:hover {
   font-family: 'Roboto', sans-serif;
   position: absolute;
   top: 370;
-  color: #330033;
+  color: #330000;
   background: rgba(1,1,1, 0);
   font-weight: 300;
   padding: 8px 12px;
