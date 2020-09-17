@@ -41,6 +41,15 @@ PCC             = 3215;
 VIS             = 2748; 
 
 f=figure;  
+    surf_viewer(double(yeo==3),SM,'visual')
+
+rmap = corr(mean(ts(:,yeo==3),2),ts); 
+
+f=figure;  
+    surf_viewer(rmap,SM,'FPN', [.2 1])
+        colormap(hot);
+    
+f=figure;  
     surf_viewer(z(VIS,:),SM,'visual', [0 .7])
     colormap(parula);
    
