@@ -1,16 +1,16 @@
 %% init  
 
 clear 
-cd('/Users/boris/Documents/1_github/micaopen/NEUR608-2019/w06/example')
-GH = '/Users/boris/Documents/1_github/micaopen'
-addpath(genpath(GH))
+cd('/Users/boris/Documents/1_github/Fall2020/code/w05/')
+% GH = '/Users/boris/Documents/1_github/micaopen'
+% addpath(genpath(GH))
 
 load('Glasser2016.mat'); 
 load('fsaverage.midthickness_mni_32k_fs_LR.mat');
 
 parcels                 = parcellation210.indexmax; 
 parcels(isnan(parcels)) = 0; 
-f=figure; BoSurfStatViewData(parcels, G,''); colormap(linspecer)
+f=figure; surf_viewer(parcels, G,''); colormap(lines)
 
 
 %% load time series and build connectomes 
@@ -38,7 +38,7 @@ f=figure;
 dc                  = mean(meanz,2); 
 dcmap               = mica_parcelData2surfData([0; dc], G, parcels); 
 f = figure;    
-    BoSurfStatViewData(dcmap, G,''); 
+    surf_viewer(dcmap, G,''); 
     
     
 %%  k-means cluster, n=2
@@ -57,9 +57,14 @@ subplot(1,4,4), imagesc(meanz(sindex,sindex));
 
 cidx2map               = mica_parcelData2surfData([0; cidx2], G, parcels); 
 f = figure;    
-    BoSurfStatViewData(cidx2map, G,['2 clusters:' num2str(mean(silh2))]);    
+    surf_viewer(cidx2map, G,['2 clusters:' num2str(mean(silh2))]);    
     colormap(linspecer)
 
+silh2map               = mica_parcelData2surfData([0; silh2], G, parcels); 
+f = figure;    
+    surf_viewer(silh2map, G,['2 clusters:' num2str(mean(silh2))]);    
+    colormap(linspecer)
+    
     
 %% k-means cluster, n=7  
 close all
@@ -78,7 +83,7 @@ subplot(1,4,4), imagesc(meanz(sindex,sindex));
 
 cidxnmap    = mica_parcelData2surfData([0; cidxn], G, parcels); 
 f = figure;    
-    BoSurfStatViewData(cidxnmap, G,['7 clusters:' num2str(mean(silhn))]);   
+    surf_viewer(cidxnmap, G,['7 clusters:' num2str(mean(silhn))]);   
     colormap(linspecer)
 
     
@@ -90,6 +95,6 @@ tree        = linkage(d,'average');
 t           = cluster(tree, 'MaxClust',7); 
 tmap        = mica_parcelData2surfData([0; t], G, parcels); 
 f = figure;    
-    BoSurfStatViewData(tmap, G,['7 clusters hierarchical']);   
+    surf_viewer(tmap, G,['7 clusters hierarchical']);   
     colormap(linspecer)
 
